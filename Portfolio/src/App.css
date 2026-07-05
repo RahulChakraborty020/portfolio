@@ -1,1 +1,100 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #0B0F1C;
+  --color-glass: rgba(15, 21, 38, 0.62);
+  --color-border: rgba(140, 163, 255, 0.13);
+  --color-border-strong: rgba(140, 163, 255, 0.28);
+  --color-text: #E9EDF9;
+  --color-muted: #9AA6C6;
+  --color-faint: #6B7699;
+  --color-accent: #5B8CFF;
+  --color-accent-2: #8B7CFF;
+  --font-family-display: "Sora", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(91, 140, 255, 0.35);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(140,163,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(140,163,255,.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 30%, transparent 75%);
+}
+
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -3;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.bg-orb.one {
+  width: 520px;
+  height: 520px;
+  top: -160px;
+  right: -120px;
+  background: radial-gradient(circle, rgba(91,140,255,.22), transparent 70%);
+}
+
+.bg-orb.two {
+  width: 460px;
+  height: 460px;
+  bottom: -180px;
+  left: -140px;
+  background: radial-gradient(circle, rgba(139,124,255,.16), transparent 70%);
+}
