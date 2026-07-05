@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import Intro from './sections/Intro/Intro'
 
 function App() {
   return (
@@ -6,11 +7,14 @@ function App() {
       <div className="bg-grid" aria-hidden="true" />
       <div className="bg-orb one" aria-hidden="true" />
       <div className="bg-orb two" aria-hidden="true" />
+      <div id="spotlight" aria-hidden="true" />
 
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
       <main>
-        <section id="hero" style={{ height: '200vh' }} />
+        <Intro />
       </main>
     </>
   )
